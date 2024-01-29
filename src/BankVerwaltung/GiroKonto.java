@@ -1,13 +1,13 @@
 package BankVerwaltung;
 
-public class GiroKonto extends Bankkonto{
+public class GiroKonto extends BankKonto{
 
-	public GiroKonto(int kontoNummer) {
-		super(kontoNummer);
+	public GiroKonto(Kunde kunde, int kontoNummer) {
+		super(kunde, kontoNummer);
 	}
 
 	@Override
-	public double aktualisiereKonotStand() {
+	public double aktualisiereKontoStand() {
 		return this.getKontoStand();
 	}
 

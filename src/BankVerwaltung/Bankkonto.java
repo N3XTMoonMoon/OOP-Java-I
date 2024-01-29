@@ -1,10 +1,11 @@
 package BankVerwaltung;
 
-public abstract class Bankkonto {
+public abstract class BankKonto {
 	private int kontoNummer;
 	private double kontoStand;
+	private Kunde kunde;
 
-	public Bankkonto(int kontoNummer) {
+	public BankKonto(Kunde kunde, int kontoNummer) {
 		this.kontoNummer = kontoNummer;
 		kontoStand = 0.0;
 	}
@@ -14,12 +15,23 @@ public abstract class Bankkonto {
 	}
 	
 	public double abheben(double betrag) {
-		if(kontoStand-betrag>0) {
+		if(kunde instanceof Unternehmenskunde) {
+		
+			if(kontoStand-betrag>0) {
+				kontoStand=kontoStand-betrag + betrag*0.015;
+				return kontoStand;
+			}else {
+				return -1.0;
+			}
+		}else {
+			if(kontoStand-betrag>0) {
 			kontoStand=kontoStand-betrag;
 			return kontoStand;
 		}else {
 			return -1.0;
 		}
+		}
+		
 	}
 	
 	public double getKontoStand() {
@@ -30,5 +42,13 @@ public abstract class Bankkonto {
 		return kontoNummer;
 	}
 	
-	public abstract double aktualisiereKonotStand();
+	public Kunde getKunde() {
+		return kunde;
+	}
+
+	public void setKunde(Kunde kunde) {
+		this.kunde = kunde;
+	}
+
+	public abstract double aktualisiereKontoStand();
 }

@@ -1,7 +1,12 @@
 import java.util.List;
 
+import BankVerwaltung.Bank;
+import BankVerwaltung.BankKonto;
 import BankVerwaltung.GiroKonto;
+import BankVerwaltung.Kunde;
+import BankVerwaltung.PrivatKunde;
 import BankVerwaltung.SparKonto;
+import BankVerwaltung.Unternehmenskunde;
 import bücherei.Bibliothek;
 import bücherei.BibliotheksBuch;
 
@@ -54,30 +59,39 @@ public class startClass {
 			buch.toString();
 		}
 		//----------------------------------------------------------
-//		SparKonto spar=new SparKonto(1);
-//		
-//		spar.einzahlen(100.0);
-//		spar.abheben(25.0);
-//		
-//		double kontoStand=spar.getKontoStand();
-//		double zinsen=spar.aktualisiereKonotStand()-kontoStand;
-//		
-//		System.out.println("SPAR:");
-//		System.out.println("KontoStand: "+kontoStand);
-//		System.out.println("Zinsen: "+zinsen);
-//		
-//		GiroKonto giro = new GiroKonto(2);
-//		
-//		giro.einzahlen(100.0);
-//		giro.abheben(25.0);
-//		
-//		kontoStand=giro.getKontoStand();
-//		zinsen=giro.aktualisiereKonotStand()-kontoStand;
-//		
-//		System.out.println("GIRO:");
-//		System.out.println("KontoStand: "+kontoStand);
-//		System.out.println("Zinsen: "+zinsen);
+		
+		Bank bank = new Bank();
+		
+		
+		
+		Unternehmenskunde unternehmen = new  Unternehmenskunde(5, "Untern", "Firma", "0101");
+		
+		PrivatKunde privat = new PrivatKunde(6, "Privat", "09.09.1999");
+		
+//		SparKonto spar=new SparKonto(unternehmen, 1);
+		SparKonto spar = (SparKonto) bank.erzeugeKonto(unternehmen, "Giro");
+		
+		
+		spar.einzahlen(100.0);
+		spar.abheben(25.0);
+		
+		double kontoStand=spar.getKontoStand();
+		double zinsen=spar.aktualisiereKontoStand()-kontoStand;
+		
+		System.out.println("SPAR:");
+		System.out.println("KontoStand: "+kontoStand);
+		System.out.println("Zinsen: "+zinsen);
+		
+		GiroKonto giro = new GiroKonto(privat,2);
+		
+		giro.einzahlen(100.0);
+		giro.abheben(25.0);
+		
+		kontoStand=giro.getKontoStand();
+		zinsen=giro.aktualisiereKontoStand()-kontoStand;
+		
+		System.out.println("GIRO:");
+		System.out.println("KontoStand: "+kontoStand);
+		System.out.println("Zinsen: "+zinsen);
 	}
-	
-	
 }
