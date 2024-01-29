@@ -40,4 +40,11 @@ public class Produkt extends Object {
 	public void setPreis(double preis) {
 		this.preis = preis;
 	}
+	public int getAnzahl() {
+		return anzahl;
+	}
+	public void setAnzahl(int anzahl) {
+		this.anzahl = anzahl;
+	}
+	
 }

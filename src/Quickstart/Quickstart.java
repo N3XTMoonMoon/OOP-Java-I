@@ -1,3 +1,4 @@
+package Quickstart;
 
 public class Quickstart {
 	static boolean isBestCourse = true;

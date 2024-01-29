@@ -1,3 +1,4 @@
+package SleepingGuide;
 import java.util.Scanner;
 
 public class SleepingGuide {
