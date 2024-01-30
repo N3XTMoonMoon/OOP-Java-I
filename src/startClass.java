@@ -1,14 +1,4 @@
-import java.util.List;
-
-import BankVerwaltung.Bank;
-import BankVerwaltung.BankKonto;
-import BankVerwaltung.GiroKonto;
-import BankVerwaltung.Kunde;
-import BankVerwaltung.PrivatKunde;
-import BankVerwaltung.SparKonto;
-import BankVerwaltung.Unternehmenskunde;
-import bücherei.Bibliothek;
-import bücherei.BibliotheksBuch;
+import Flugverwaltung.FlugbuchungssystemApp;
 
 public class startClass {
 	public static void main(String args[]) {
@@ -93,5 +83,10 @@ public class startClass {
 //		System.out.println("GIRO:");
 //		System.out.println("KontoStand: "+kontoStand);
 //		System.out.println("Zinsen: "+zinsen);
+		
+		FlugbuchungssystemApp app = new FlugbuchungssystemApp();
+		
+		app.verarbeiteBuchungen();
+		
 	}
 }
