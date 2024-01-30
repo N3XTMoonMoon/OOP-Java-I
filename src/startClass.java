@@ -31,33 +31,33 @@ public class startClass {
 //		einkauf.einkauf();
 		
 		//----------------------------------------------------------
-		Bibliothek bib = new Bibliothek("Adresse 1", "BIBBI liothek");
-		
-		bib.addMitarbeiter(1, "Tina", 'F');
-		bib.addBibliotheksBuch("titel1","autor","1");
-		
-		List<BibliotheksBuch> bücherListe = bib.getBücher();
-		
-		for(BibliotheksBuch buch:bücherListe) {
-			buch.ausleihen();
-			buch.zurueckgeben();
-			buch.toString();
-		}
-		
-		Bibliothek bib2 = new Bibliothek("Adresse 2", "Buubliothek");
-		
-		bib2.addBibliotheksBuch("titel2","autor","1");
-		bib2.addMitarbeiter(1, "Bina", 'F');
-		
-		bücherListe = bib2.getBücher();
-		
-		for(BibliotheksBuch buch:bücherListe) {
-			buch.ausleihen();
-			buch.zurueckgeben();
-			buch.ausleihen();
-			buch.ausleihen();
-			buch.toString();
-		}
+//		Bibliothek bib = new Bibliothek("Adresse 1", "BIBBI liothek");
+//		
+//		bib.addMitarbeiter(1, "Tina", 'F');
+//		bib.addBibliotheksBuch("titel1","autor","1");
+//		
+//		List<BibliotheksBuch> bücherListe = bib.getBücher();
+//		
+//		for(BibliotheksBuch buch:bücherListe) {
+//			buch.ausleihen();
+//			buch.zurueckgeben();
+//			buch.toString();
+//		}
+//		
+//		Bibliothek bib2 = new Bibliothek("Adresse 2", "Buubliothek");
+//		
+//		bib2.addBibliotheksBuch("titel2","autor","1");
+//		bib2.addMitarbeiter(1, "Bina", 'F');
+//		
+//		bücherListe = bib2.getBücher();
+//		
+//		for(BibliotheksBuch buch:bücherListe) {
+//			buch.ausleihen();
+//			buch.zurueckgeben();
+//			buch.ausleihen();
+//			buch.ausleihen();
+//			buch.toString();
+//		}
 		//----------------------------------------------------------
 		
 		Bank bank = new Bank();
@@ -69,7 +69,7 @@ public class startClass {
 		PrivatKunde privat = new PrivatKunde(6, "Privat", "09.09.1999");
 		
 //		SparKonto spar=new SparKonto(unternehmen, 1);
-		SparKonto spar = (SparKonto) bank.erzeugeKonto(unternehmen, "Giro");
+		SparKonto spar = (SparKonto) bank.erzeugeKonto(unternehmen, "Sparkonto");
 		
 		
 		spar.einzahlen(100.0);

@@ -11,7 +11,7 @@ public Bank() {
 	kontoListe = new ArrayList<BankKonto>();
 }
 
-public BankKonto erzeugeKonto(Kunde kunde, String typ) {
+public BankKonto erzeugeKonto(Kunde kunde, String typ){
 	
 	if(kontoListe.isEmpty()) {
 		kontoNr=1;
